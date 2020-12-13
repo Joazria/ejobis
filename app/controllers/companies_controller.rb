@@ -18,7 +18,7 @@ class CompaniesController < ApplicationController
     if @company.save
       redirect_to @company, notice: "Sua empresa foi registrada com sucesso."
     else
-      render :new
+      render :new, notice: "Something goes wrong."
     end
   end
 
@@ -53,6 +53,7 @@ class CompaniesController < ApplicationController
                                   :city,
                                   :state,
                                   :address,
-                                  :cnpj)
+                                  :cnpj,
+                                  :logo)
   end
 end

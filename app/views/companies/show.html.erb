@@ -1,2 +1,11 @@
-<h1>Companies#show</h1>
+<h1><%= @company.name %> </h1>
 <p>Find me in app/views/companies/show.html.erb</p>
+<img src='<%= cl_image_path @company.logo.key, :width => 150, :height => 50, class: "logo" %>' />
+
+<h2>CNPJ<%= @company.cnpj %> </h2>
+<h2>Telefone<%= @company.phone %> </h2>
+<h2>E-mail<%= @company.email %> </h2>
+<h2>Website<%= @company.website %> </h2>
+<h2>Estado <%= @company.state %> </h2>
+<h2>Cidade <%= @company.city %> </h2>
+<h2>Endereço <%= @company.address %> </h2>
