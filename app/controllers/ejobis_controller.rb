@@ -18,7 +18,7 @@ class EjobisController < ApplicationController
 
     @ejobi = Ejobi.new(ejobi_params)
     @ejobi.company = @company
-    @ejobi.user = current_user
+    @company.user = current_user
     if @ejobi.save
       redirect_to  profile_path, notice: "Sua proposta de ejobi foi criada."
     else

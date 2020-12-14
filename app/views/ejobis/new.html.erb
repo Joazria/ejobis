@@ -1,2 +1,82 @@
-<h1>Ejobis#new</h1>
-<p>Find me in app/views/ejobis/new.html.erb</p>
+
+<div class="container">
+  <h1>REGISTRAÇÃO DE SEU PERFIL DE E-JOBER</h1>
+
+  <%= simple_form_for [ @company, @ejobi ] do |f| %>
+     <div class="row">
+     <div class="col-6">
+       <%= f.input :name,
+                label: 'Qual é o titulo do seu ejobis',
+                placeholder: 'Atendente de lojas de moda' %>
+      </div>
+      <div class="col-6">
+          <%= f.input :position,
+                      collection: [ "Assistente de vendas",
+                                    "Cozinheiro geral",
+                                    "Atendente de lojas e mercados",
+                                    "Alimentador de linha de produção",
+                                    "Agente de segurança",
+                                    "Repositor de mercadorias",
+                                    "Vendedor de comércio varejista",
+                                    "Servente de obras",
+                                    "Faxineiro",
+                                    "Ajudante de motorista"],
+                      placeholder: 'Assistente de vendas' %>
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="col-12">
+       <%= f.input :release,
+                   label: 'Descripção do cargo e tarefas',
+                    as: :text,
+                    placeholder: 'Assistente de venda, vc apoiara o trabalho dos vendedores por uma loja de moda masculino' %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-3">
+       <%= f.input :start_time,
+                    label: 'Que horas inicia ?',
+                    placeholder: '08:00' %>
+     </div>
+     <div class="col-3">
+       <%= f.input :end_time,
+                    label: 'Que horas acaba ?',
+                    placeholder: '19:00' %>
+     </div>
+      <div class="col-3">
+       <%= f.input :start_date,
+                    label: 'Que dia inicia  ?',
+                    as: :date %>
+     </div>
+
+      <div class="col-3">
+       <%= f.input :end_date,
+                    label: 'Que dia acaba  ?',
+                    as: :date %>
+     </div>
+   </div>
+
+   <div class="row">
+      <div class="col-4">
+        <%= f.input :fee,
+                    collection: ["125", "150", "175", "200", "250"],
+                    placeholder: 'qual é o fee por dia trabalhado (8horas)'  %>
+      </div>
+      <div class="col-4">
+        <%= f.input :acceptance,
+                    label: 'acepto fazer o ejobi  ',
+                    collection: ["sim", "não"],
+                    placeholder: 'sim, caso tem interess '  %>
+      </div>
+        <div class="col-4">
+        <%= f.input :validation,
+                    label: 'o cliente valido o ejobi ',
+                    collection: ["não"],
+                    placeholder: 'to be fullfil by company'  %>
+      </div>
+
+
+    <p><%= f.submit "Send my eJobi ", class: "btn btn-primary" %></p>
+  <% end %>
+  </div>
