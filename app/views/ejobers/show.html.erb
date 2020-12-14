@@ -1,21 +1,43 @@
-<p>Find me in app/views/ejobers/show.html.erb</p>
-<img src='<%= cl_image_path @ejober.avatar.key, :gravity=>"face", :width=>150, :height=>150,:radius=>"max", :crop=>"thumb", class: "avatar-ejober" %>' />
+<div class="row">
+  <div class="col-3">
+    <img src='<%= cl_image_path @ejober.avatar.key, :gravity=>"face", :width=>150, :height=>150, :crop=>"thumb", class: "avatar-ejober" %>' />
+    <p> username: jpjunior</p>
+    <%= link_to "Edit perfil", edit_ejober_path, class: "btn btn-flat" %>
+  </div>
+  <div class="col-3">
+    <h1> <%= @ejober.surname %></h1>
+    <p> <%= @ejober.name %></p>
+    <br>
+    <p> Cargo <%= @ejober.position %></p>
+    <p> Whatsapp <%= @ejober.phone %></p>
+    <p> e-mail: joao@gmail.com</p>
 
-<h1> <%= @ejober.name %></h1>
-<h1> <%= @ejober.surname %></h1>
-<h1> Date de nascimento: <%= @ejober.birthday %></h1>
-<h1> Genero: <%= @ejober.gender %></h1>
-<h1> Ethnia <%= @ejober.ethnic %></h1>
-<h1> Deficiencia <%= @ejober.deficiency %></h1>
-<h1> Habilidade <%= @ejober.skills %></h1>
+  </div>
+  <div class="col-6">
+    <h1>DADOS PESSOAIS</h1>
+    <div class="row">
+      <div class="col-6">
+        <p> Date de nascimento: <%= @ejober.birthday %></p>
+        <p> Genero: <%= @ejober.gender %></p>
+        <p> Ethnia <%= @ejober.ethnic %></p>
+        <p> Deficiencia <%= @ejober.deficiency %></p>
+      </div>
+      <div class="col-6">
+        <p> endereço: <%= @ejober.address %></p>
+        <p> CPF <%= @ejober.cpf %></p>
+        <p> Cidade: <%= @ejober.city %></p>
+        <p> State: <%= @ejober.state %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<h2> Habilidade <%= @ejober.skills %></h2>
 <p>  Descripção: <%= @ejober.release %></p>
-<h1> Cargo <%= @ejober.position %></h1>
-<h1> endereço: <%= @ejober.address %></h1>
-<h1> CPF <%= @ejober.cpf %></h1>
-<h1> Cidade: <%= @ejober.city %></h1>
-<h1> State: <%= @ejober.state %></h1>
-<h1> Whatsapp <%= @ejober.phone %></h1>
-<h1> e-mail: joao@gmail.com</h1>
-<h1> jpjunior</h1>
-<h1> edit your perfil</h1>
+
+
 

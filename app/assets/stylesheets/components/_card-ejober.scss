@@ -1,0 +1,56 @@
+.card-ejober {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+
+}
+
+.card-ejober > img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-ejober h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  opacity: .7;
+
+  & a {
+  text-decoration: none;
+
+  }
+}
+
+.card-ejober p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+
+  & a {
+  text-decoration: none;
+}
+}
+
+.card-ejober a {
+}
+
+
+.card-ejober .card-ejober-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-ejober-infos .card-company-avatar {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
