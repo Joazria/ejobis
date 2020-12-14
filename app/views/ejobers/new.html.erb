@@ -1,2 +1,131 @@
-<h1>Ejobers#new</h1>
-<p>Find me in app/views/ejobers/new.html.erb</p>
+
+<div class="container">
+  <h1>REGISTRAÇÃO DE SEU PERFIL DE E-JOBER</h1>
+
+  <%= simple_form_for @ejober do |f| %>
+    <div class="row">
+        <div class="col-6">
+          <%= f.input :surname,
+                      label: 'Seu sobrenome:',
+                      placeholder: 'João-Pedro' %>
+        </div>
+        <div class="col-6">
+          <%= f.input :name,
+                      label: 'Seu nome:',
+                      placeholder: 'Goulart' %>
+        </div>
+    </div>
+
+   <div class="row">
+        <div class="col-6">
+          <%= f.input :cpf,
+                      label: 'CPF:',
+                      placeholder: ' 062.382.747-60' %>
+        </div>
+        <div class="col-6">
+          <%= f.input :phone,
+                      label: 'Telephone:',
+                      placeholder: ' + 55 (21)99699 5765' %>
+        </div>
+  </div>
+
+      <div class="row">
+        <div class="col-4">
+          <%= f.input :gender,
+                      collection: [ "Homem", "Mulher"],
+                      label: 'Genero:',
+                      placeholder: 'rh@birdscommunications.com' %>
+
+
+        </div>
+        <div class="col-4">
+          <%= f.input :ethnic,
+                      collection: [ "Branco", "Preto", "Preto", "Indigena" ],
+                      placeholder: 'Indigena' %>
+        </div>
+        <div class="col-4">
+          <%= f.input :birthday,
+                      label: 'Data de nascimento:',
+                      as: :date,
+                      placeholder: 'dd/mm/yy' %>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-4">
+          <%= f.input :position,
+                      label: 'Cargo desejado',
+                      collection: [ "Assistente de vendas",
+                                    "Cozinheiro geral",
+                                    "Atendente de lojas e mercados",
+                                    "Alimentador de linha de produção",
+                                    "Agente de segurança",
+                                    "Repositor de mercadorias",
+                                    "Vendedor de comércio varejista",
+                                    "Servente de obras",
+                                    "Faxineiro",
+                                    "Ajudante de motorista"],
+                      placeholder: 'Assistente de vendas' %>
+        </div>
+        <div class="col-4">
+          <%= f.input :skills,
+                      label: 'Habilidades',
+                      collection: [ "Assistente de vendas",
+                                    "Cozinheiro geral",
+                                    "Atendente de lojas e mercados",
+                                    "Alimentador de linha de produção",
+                                    "Agente de segurança",
+                                    "Repositor de mercadorias",
+                                    "Vendedor de comércio varejista",
+                                    "Servente de obras",
+                                    "Faxineiro",
+                                    "Ajudante de motorista"],
+                      placeholder: 'Rio de Janeiro' %>
+       </div>
+       <div class="col-4">
+          <%= f.input :deficiency,
+                      label: 'deficiencia',
+                      placeholder: 'Indicar sua deficiencia, e-jobis se adapta nas suas necessidades' %>
+       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <%= f.input :release,
+                    label: 'Apresenta-se :-)',
+                    as: :text,
+                    placeholder: 'Oi ! meu nome é Junior, tenho 32 anos, estou formado em eletricidade, mas costumo realizar free em bar e restaurante como garção alem de atendimento nas vendas' %>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+          <%= f.input :state,
+                      label: 'Estado',
+                      placeholder: 'RJ' %>
+        </div>
+        <div class="col-4">
+          <%= f.input :city,
+                      label: 'Cidade',
+                      placeholder: 'Rio de Janeiro' %>
+       </div>
+       <div class="col-4">
+          <%= f.input :address,
+                      label: 'endereço',
+                      placeholder: 'rua joão ramalho,586' %>
+       </div>
+    </div>
+
+    <div class="row">
+      <%= f.input :avatar,
+                  label: 'upload um selfie',
+                  as: :file %>
+    </div>
+
+    <div class="row">
+      <p><%= f.submit "Criar seu perfil", class: "btn btn-success" %></p>
+    </div>
+
+  <% end %>
+</div>

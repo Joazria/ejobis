@@ -2,7 +2,7 @@ class EjobersController < ApplicationController
       before_action :set_ejober, only: [:show, :edit, :update, :destroy]
 
   def show
-    @ejoberes = Ejober.all
+    @ejobers = Ejober.all
   end
 
   def new
@@ -24,7 +24,7 @@ class EjobersController < ApplicationController
 
   def update
     if @ejober.update(ejober_params)
-      redirect_to @ejober, notice: "Seu perfil foi criado com sucesso."
+      redirect_to @ejober, notice: "Seu perfil foi atualizado com sucesso."
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class EjobersController < ApplicationController
   end
 
   # Only allow a trusted parameter "white list" through.
-  def ejobner_params
+  def ejober_params
   params.require(:ejober).permit(:name,
                                   :surname,
                                   :birthday,
@@ -54,6 +54,10 @@ class EjobersController < ApplicationController
                                   :release,
                                   :position,
                                   :address,
-                                  :cpf)
+                                  :cpf,
+                                  :city,
+                                  :state,
+                                  :phone,
+                                  :avatar)
   end
 end
