@@ -1,5 +1,4 @@
 class Ejobi < ApplicationRecord
-  belongs_to :ejober
   belongs_to :company
 
   validates :name,
@@ -11,7 +10,7 @@ class Ejobi < ApplicationRecord
             :end_time,
             :fee,
             :address,
-            :acceptance,
-            :validation,
+            :state,
+            :city,
             presence: true
 end

@@ -1,0 +1,45 @@
+.perfil-ejober{
+  text-decoration: none;
+  color: #1a1a1a;
+   display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 12px;
+
+  }
+.dados-ejober {
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 12px;
+    margin: 0 20px;
+
+}
+.contatos-ejober {
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 12px;
+
+}
+
+.ejober-description {
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 20px;
+
+}
+
+.link-ejober-dash{
+    padding: 20px;
+}
+
+.rating{
+  display:flex;
+}
+.card-ejober-rating{
+        align-self: flex-end;
+        color: rgb(255, 223, 94);
+        align-content: left;
+}

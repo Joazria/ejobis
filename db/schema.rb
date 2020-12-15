@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2020_12_14_021649) do
   end
 
   create_table "ejobis", force: :cascade do |t|
-    t.bigint "ejober_id", null: false
     t.bigint "company_id", null: false
     t.string "position"
     t.text "release"
@@ -84,14 +83,13 @@ ActiveRecord::Schema.define(version: 2020_12_14_021649) do
     t.date "start_time"
     t.date "end_time"
     t.integer "fee"
+    t.string "city"
+    t.string "state"
     t.string "address"
-    t.boolean "acceptance"
-    t.boolean "validation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.index ["company_id"], name: "index_ejobis_on_company_id"
-    t.index ["ejober_id"], name: "index_ejobis_on_ejober_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -112,5 +110,4 @@ ActiveRecord::Schema.define(version: 2020_12_14_021649) do
   add_foreign_key "companies", "users"
   add_foreign_key "ejobers", "users"
   add_foreign_key "ejobis", "companies"
-  add_foreign_key "ejobis", "ejobers"
 end

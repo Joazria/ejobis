@@ -20,8 +20,9 @@ class EjobisController < ApplicationController
     @ejobi.company = @company
     @company.user = current_user
     if @ejobi.save
-      redirect_to  profile_path, notice: "Sua proposta de ejobi foi criada."
+      redirect_to profile_path, notice: "Sua proposta de ejobi foi criada."
     else
+      raise
       render :new
     end
   end
@@ -44,7 +45,7 @@ class EjobisController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_offer
+  def set_ejobi
     @ejobi = Ejobi.find(params[:id])
   end
 
@@ -63,8 +64,8 @@ class EjobisController < ApplicationController
             :end_time,
             :fee,
             :address,
-            :acceptance,
-            :validation
+            :city,
+            :state
       )
    end
 end

@@ -1,0 +1,7 @@
+    <h2>CONTATOS </h2>
+        <p> <i class="fab fa-whatsapp"></i> +55(21)07650<%= @ejober.phone %></p>
+        <p><i class="fas fa-envelope-open-text"></i> <%= @ejober.name %>@intermitente.com</p>
+        <p><i class="fas fa-map-marked-alt"></i> endereço: <%= @ejober.address %></p>
+        <p><i class="fas fa-map-marked-alt"></i> Cidade: <%= @ejober.city %>  -  <%= @ejober.state %></p>
+        <%= link_to "Contatar", edit_ejober_path, class: "btn btn-flat" %>
+

@@ -37,12 +37,12 @@
      <div class="col-3">
        <%= f.input :start_time,
                     label: 'Que horas inicia ?',
-                    placeholder: '08:00' %>
+                    as: :time %>
      </div>
      <div class="col-3">
        <%= f.input :end_time,
                     label: 'Que horas acaba ?',
-                    placeholder: '19:00' %>
+                    as: :time %>
      </div>
       <div class="col-3">
        <%= f.input :start_date,
@@ -54,6 +54,23 @@
        <%= f.input :end_date,
                     label: 'Que dia acaba  ?',
                     as: :date %>
+     </div>
+   </div>
+   <div class="row">
+    <div class="col-4">
+        <%= f.input :state,
+                    label: 'Estado:',
+                    placeholder: 'SP' %>
+    </div>
+     <div class="col-4">
+          <%= f.input :city,
+                      label: 'Cidade:',
+                      placeholder: 'São Paulo' %>
+     </div>
+     <div class="col-4">
+          <%= f.input :address,
+                      label: 'Endereço:',
+                      placeholder: 'rua joão ramalho,586' %>
      </div>
    </div>
 

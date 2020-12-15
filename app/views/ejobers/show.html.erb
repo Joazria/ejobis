@@ -1,43 +1,142 @@
-<div class="row">
-  <div class="col-3">
-    <img src='<%= cl_image_path @ejober.avatar.key, :gravity=>"face", :width=>150, :height=>150, :crop=>"thumb", class: "avatar-ejober" %>' />
-    <p> username: jpjunior</p>
-    <%= link_to "Edit perfil", edit_ejober_path, class: "btn btn-flat" %>
-  </div>
-  <div class="col-3">
-    <h1> <%= @ejober.surname %></h1>
-    <p> <%= @ejober.name %></p>
-    <br>
-    <p> Cargo <%= @ejober.position %></p>
-    <p> Whatsapp <%= @ejober.phone %></p>
-    <p> e-mail: joao@gmail.com</p>
+<div class="container">
+
+  <div class="perfil-ejober">
+        <%= render "shared/best-ejobers", ejober: @ejober %>
+     <div class="dados-ejober">
+        <%= render "shared/dados_ejober", ejober: @ejober %>
+      </div>
+      <div class="contatos-ejober">
+        <%= render "shared/contato_ejober", ejober: @ejober %>
+      </div>
+   </div>
+
+   <div class="ejober-description">
+      <h2> Cargo: <%= @ejober.position %></h2>
+      <p> Outra habilidade:<%= @ejober.skills %></p>
+      <p>  Descripção: <%= @ejober.release %></p>
+   </div>
+
+  <div class="link-ejober-dash">
+
+      <%#= link_to "Edit perfil", edit_ejober_path, class: "btn btn-flat" %>
+      <%= link_to "Favoritar", edit_ejober_path, class: "btn btn-flat" %>
+      <%= link_to "Avaliar & deixar comments", edit_ejober_path, class: "btn btn-flat" %>
+      <%= link_to "e-jobing", edit_ejober_path, class: "btn btn-flat" %>
+
 
   </div>
-  <div class="col-6">
-    <h1>DADOS PESSOAIS</h1>
-    <div class="row">
-      <div class="col-6">
-        <p> Date de nascimento: <%= @ejober.birthday %></p>
-        <p> Genero: <%= @ejober.gender %></p>
-        <p> Ethnia <%= @ejober.ethnic %></p>
-        <p> Deficiencia <%= @ejober.deficiency %></p>
+
+  <div class="notification">
+    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+    <div class="notification-content">
+      <p><small>29 Novembro</small></p>
+      <p>Trablho bem executado, <strong>organizado</strong>todas as tarefas foram realizadas, mas poderia se esforçar mais.</p>
+     <div class="rating">
+       <div class="card-ejober-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+        </div>
+     </div>
+
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="notification">
+    <img src='https://res.cloudinary.com/numama/image/upload/v1608042560/ejobis/maria_qkdbap.png' class="avatar-large"/>
+    <div class="notification-content">
+      <p><small>25 Novembro</small></p>
+      <p>Uma pessoa <strong>bem organizada</strong> realizou todos os tarefos pedidos.</p>
+        <div class="rating">
+         <div class="card-ejober-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+         </div>
       </div>
-      <div class="col-6">
-        <p> endereço: <%= @ejober.address %></p>
-        <p> CPF <%= @ejober.cpf %></p>
-        <p> Cidade: <%= @ejober.city %></p>
-        <p> State: <%= @ejober.state %></p>
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="notification">
+    <img src='https://res.cloudinary.com/numama/image/upload/v1608042549/ejobis/avatar_dri_pee4pv.png' class="avatar-large"/>
+    <div class="notification-content">
+      <p><small>17 Novembro</small></p>
+      <p>Chegou com meia hora de atraso, fora isso realizou <strong>um trabalho maravilhoso</strong>.</p>
+       <div class="rating">
+         <div class="card-ejober-rating text-right">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+       </div>
+
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="notification">
+    <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+    <div class="notification-content">
+      <p><small>13 Novembro</small></p>
+      <p>O e-jobi foi, <strong>bem feito, mas nada exceptional </strong>, ligado demais no horario.</p>
+       <div class="rating">
+         <div class="card-ejober-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+        </div>
+       </div>
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div>
+
+
+  <div class="notification">
+    <img src='https://res.cloudinary.com/numama/image/upload/v1608042544/ejobis/adriana_ephesx.png' class="avatar-large"/>
+    <div class="notification-content">
+      <p><small>28 Outubro</small></p>
+      <p>Pessoa muito agradavel,puntual<strong>excellente</strong> trabalho, recomendo muito.</p>
+       <div class="rating">
+       <div class="card-ejober-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
       </div>
+       </div>
+
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
     </div>
   </div>
 </div>
-
-
-
-
-
-<h2> Habilidade <%= @ejober.skills %></h2>
-<p>  Descripção: <%= @ejober.release %></p>
-
-
-
