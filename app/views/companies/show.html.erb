@@ -1,11 +1,45 @@
-<h1><%= @company.name %> </h1>
-<p>Find me in app/views/companies/show.html.erb</p>
-<img src='<%= cl_image_path @company.logo.key, :width => 150, :height => 50, class: "logo" %>' />
+     <%= render 'shared/search' %>
+ <hr class="separator" />
 
-<h2>CNPJ<%= @company.cnpj %> </h2>
-<h2>Telefone<%= @company.phone %> </h2>
-<h2>E-mail<%= @company.email %> </h2>
-<h2>Website<%= @company.website %> </h2>
-<h2>Estado <%= @company.state %> </h2>
-<h2>Cidade <%= @company.city %> </h2>
-<h2>Endereço <%= @company.address %> </h2>
+<div class="padrao">
+  <div class="white-card">
+    <div class="tema text-center mt-5 mb-5">
+      <h1>Criar uma vaga <strong>eJobis</strong></h1>
+    <%= link_to "Accesso no seu dashboard", profile_path, class: "btn btn-flat"  %>
+    </div>
+  </div>
+
+  <div class="white-card">
+    <div class="tema text-center mt-5">
+      <h1>postar um <strong>eJober</strong></h1>
+
+    <%= render 'shared/search' %>
+    </div>
+  </div>
+</div>
+
+<hr class="separator" />
+
+  <div class="padrao">
+      <div class="id-company">
+        <img src='<%= cl_image_path @company.logo.key, :width => 150, :height => 50, class: "logo" %>' />
+      </div>
+      <div class="dados-company">
+        <p> <strong><%= @company.name %> </strong></p>
+        <p>CNPJ: 13.123.134.0001/<%= @company.cnpj %> </p>
+        <p><i class="fas fa-phone-alt"></i>  +55(11)2345.1 <%= @company.phone %> </p>
+        <p><i class="far fa-envelope-open"></i> <%= @company.email %> </h2>
+        <p><%= @company.website %> </p>
+      </div>
+      <div class="contatos-company">
+        <p> <strong>INFOS</strong></p>
+        <p><i class="fas fa-map-marked-alt"></i> Estado: <%= @company.state %> </p>
+        <p><i class="fas fa-map-marked-alt"></i> Cidade: <%= @company.city %> </p>
+        <p><i class="fas fa-map-marked-alt"></i> Endereço: <%= @company.address %> </p>
+        <%= link_to "Edit o perfil de sua empresa",edit_company_path, class: "btn btn-flat" %>
+      </div>
+  </div>
+</div>
+<hr class="separator" />
+
+

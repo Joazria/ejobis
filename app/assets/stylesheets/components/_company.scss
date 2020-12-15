@@ -1,0 +1,99 @@
+.padrao {
+  display: flex;
+  width:100vw;
+  height:100%;
+  gap:20px 10px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+// }
+
+// .perfil-company{
+//   text-decoration: none;
+//   color: #1a1a1a;
+//   //display: grid;
+//   //grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   padding: 12px;
+
+
+  }
+.dados-company {
+    flex:1;
+    min-width: 300px;
+    max-height: 200px;
+    min-height: 250px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 12px;
+    margin-left: 12px;
+
+}
+.id-company {
+    flex:1;
+    min-height: 250px;
+    min-width: 300px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    color: #1a1a1a;
+    gap: 15px 0;
+    // <row-gap> <column-gap>
+    & > img {
+      width:300px;
+      height:180px;
+    }
+    & h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+      opacity: .7;
+
+      & a {
+      text-decoration: none;
+      }
+    }
+    & p {
+      font-size: 12px;
+      opacity: .7;
+      margin: 0;
+
+      & a {
+      text-decoration: none;
+      }
+    }
+  }
+.contatos-company {
+    flex:1;
+    min-width: 300px;
+    min-height: 250px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 12px;
+
+}
+
+.link-ejober-dash{
+    padding: 20px;
+}
+
+.white-card {
+  display:flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10%;
+  min-height: 150px;
+  max-height: 300px;
+  width: 50vh;
+  gap:20px;
+
+}

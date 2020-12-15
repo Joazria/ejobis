@@ -3,6 +3,12 @@ class CompaniesController < ApplicationController
 
   def show
     @companies = Company.all
+    if params[:query].present?
+      sql_query = "position ILIKE :query OR skills ILIKE :query"
+      @ejobers = Ejober.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @ejobers = Ejober.all
+    end
   end
 
   def new
