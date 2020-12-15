@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_12_14_021649) do
     t.string "ethnic"
     t.string "deficiency"
     t.string "skills"
-    t.string "release"
+    t.text "release"
     t.string "position"
     t.string "address"
     t.integer "cpf"

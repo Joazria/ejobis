@@ -2,25 +2,34 @@
   background: black;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 100px;
   padding: 0px 50px;
   color: gray;
-}
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: white;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  @media screen and (max-width: 660px){
+    flex-direction: column;
+  }
+  .fa-heart {
+    color: #d23333;
+  }
+  &-copyright {
+    text-align: center;
+  }
+  &-links {
+    display: flex;
+    align-items: center;
+    a {
+      color: white;
+      opacity: 0.15;
+      text-decoration: none;
+      font-size: 24px;
+      padding: 0px 10px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 }
