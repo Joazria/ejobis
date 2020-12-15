@@ -1,6 +1,15 @@
 class EjobersController < ApplicationController
       before_action :set_ejober, only: [:show, :edit, :update, :destroy]
 
+      def index
+    if params[:query].present?
+      sql_query = "position ILIKE :query OR skills ILIKE :query"
+      @ejobers = Ejober.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @ejobers = Ejober.all
+    end
+  end
+
   def show
     @ejobers = Ejober.all
   end

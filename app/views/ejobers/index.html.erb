@@ -1,0 +1,8 @@
+<%= render 'shared/search' %>
+
+<div class="cards-ejobers">
+  <% @ejobers.each do |ejober| %>
+    <%= render "shared/best-ejobers", ejober: ejober %>
+  <% end %>
+
+</div>

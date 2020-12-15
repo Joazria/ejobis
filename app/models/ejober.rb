@@ -22,4 +22,12 @@ class Ejober < ApplicationRecord
             presence: true,
             numericality: { only_integer: true }
 
+
+ include PgSearch::Model
+  pg_search_scope :search_by_position,
+    against: [ :skills, :position],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end

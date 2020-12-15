@@ -5,13 +5,17 @@ class PagesController < ApplicationController
   def home
 
     if params[:query].present?
-      @ejobers = Ejober.search_by_name(params[:query])
+      @ejobers = Ejober.search_by_position(params[:query])
     else
       @ejobers = Ejober.all
     end
   end
 
   def profile
-
+    if params[:query].present?
+      @ejobers = Ejober.search_by_position(params[:query])
+    else
+      @ejobers = Ejober.all
+    end
   end
 end
