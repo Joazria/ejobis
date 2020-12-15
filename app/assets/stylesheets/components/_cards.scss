@@ -1,41 +1,28 @@
 .cards {
+  width: 90%;
+  margin: 0 auto;
   padding-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  justify-content: center;
+  // flex-flow: row wrap;
+  // <flex-direction> <flex-wrap>
+  flex-wrap: wrap;
+  // flex-wrap: wrap define que quando a soma da largura dos elementoa for maior que o tamanho do container, ele quebra a linha
+  gap: 16px;
+  a,
+  .card-category {
+    max-width: 320px;
+    flex: 1 1 320px;
+    /*
+      flex-shrink: 1;
+      flex-grow: 1;
+      flex-basis: 0;
+    */
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}

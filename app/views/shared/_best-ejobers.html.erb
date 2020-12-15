@@ -1,0 +1,17 @@
+ <%= link_to ejober, class="card-ejober" do  %>
+  <img src="#" class="card-company-avatar" />
+  <img src="<%= cl_image_path ejober.avatar.key, :gravity=>"face", :width=>200, :height=>200,:radius=>"max", :crop=>"thumb", crop: :fill %>" />
+  <div class="card-ejober-infos">
+    <div>
+      <h2><%= ejober.name %></h2>
+      <p><%= ejober.position %></p>
+    </div>
+    <div class="card-ejober-rating">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <i class="far fa-star"></i>
+    </div>
+  </div>
+<% end %>

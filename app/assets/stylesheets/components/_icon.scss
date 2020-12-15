@@ -1,42 +1,49 @@
-
 .icones {
+  width: 90%;
+  margin: 0 auto;
   padding-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-.icon {
-  overflow: hidden;
-  //background: white;
-  //box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height:200px;
-  width:200px;
-}
-
-.icon > img {
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-}
-
-.icon h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.icon p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.icon .icon-infos {
-  padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  flex-wrap: wrap;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  // place-items: start center;
+  // <justify-items> <align-items>
+  gap: 16px;
+  .icon {
+    flex: 1 1 150px;
+    // propriedade que se coloca nos flex child
+    object-fit: contain;
+    height: fit-content;
+    width:200px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    & > img {
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+    }
+    & h2 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    & p {
+      font-size: 12px;
+      opacity: .7;
+    }
+    .icon-infos {
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-flow: column nowrap;
+    }
+  }
 }
+
+
+
+
+
 

@@ -1,20 +1,20 @@
  <%= render 'shared/banner' %>
-<class class="tema text-center">
-  <h1>As <strong>Vantagens</strong></h1>
-</class>
+<div class="tema text-center mt-5">
+  <h1 class=>As <strong>Vantagens</strong></h1>
+</div>
 <div class="icones">
   <div class="icon">
     <img src="https://res.cloudinary.com/numama/image/upload/v1607942699/ejobis/icones/security_ugyvif.png" />
     <div class="icon-infos">
         <h2>Segurança</h2>
-        <p>garantindo os direitos do trabalhador</p>
+        <p>garantindo os direitosdo trabalhador</p>
     </div>
   </div>
   <div class="icon">
     <img src="https://res.cloudinary.com/numama/image/upload/v1607942699/ejobis/icones/flexibility_u1zs27.png" />
     <div class="icon-infos">
         <h2>Flexibilidade</h2>
-        <p>em acordo com a demanda do seu negócio </p>
+        <p>em acordo com a demandado seu negócio</p>
     </div>
   </div>
    <div class="icon">
@@ -55,10 +55,10 @@
       </div>
     </div>
 
-<br>
-<class class="tema text-center">
+<hr class="separator" />
+<div class="tema text-center">
   <h1>Faça parte da <strong>communidade eJobis</strong></h1>
-</class>
+</div>
 
 <br>
   <div class="cards">
@@ -81,60 +81,68 @@
     </div>
   </div>
 
-<br>
+<hr class="separator"/>
 
-<class class="tema text-center">
+<div class="tema text-center">
   <h1>Procurando um <strong>eJobis</strong></h1>
-</class>
+</div>
 
 <div class="cards">
     <div class="card-ejobis">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
       <div class="card-ejobis-infos">
         <h2>Assistente de vendas // loja de skateboard</h2>
-        <p>Vaga como assistente de vendas <strong>do dia 14 ao dia 18 de dezembro</strong>                  R$1.500,00</p>
+        <p>Vaga como assistente de vendas <strong>do dia 14 ao dia 18 de dezembro</strong></p>
+        <p class="salary">R$1.500,00</p>
       </div>
     </div>
   <div class="card-ejobis">
       <img src="https://res.cloudinary.com/numama/image/upload/v1607884635/ejobis/ejober7_mcbt2m.png" />
       <div class="card-ejobis-infos">
         <h2>Repositor de mercadorias // loja de construção </h2>
-        <p>Vaga como repositor de mercadorias <strong>do dia 14 ao dia 18 de dezembro</strong>                  R$1.500,00</p>
+        <p>Vaga como repositor de mercadorias <strong>do dia 14 ao dia 18 de dezembro</strong></p>
+        <p class="salary">R$1.500,00</p>
       </div>
     </div>
   <div class="card-ejobis">
       <img src="https://res.cloudinary.com/numama/image/upload/v1607884563/ejobis/ejober1_dluesz.png" />
       <div class="card-ejobis-infos">
         <h2>Assistente de Cozinheiro</h2>
-        <p>Vaga como aprenti cozinheiro <strong>do dia 14 ao dia 18 de dezembro</strong>                 R$1.500,00</p>
+        <p>Vaga como aprenti cozinheiro <strong>do dia 14 ao dia 18 de dezembro</strong></p>
+        <p class="salary">R$1.500,00</p>
       </div>
     </div>
 </div>
 
 
-<br>
+<hr class="separator"/>
 
 
-<class class="tema text-center">
+<div class="tema text-center">
   <h1>Best <strong>eJobers</strong> do mês</h1>
-</class>
+</div>
 
-<div class="cards">
-      <% @ejobers.shuffle.first(3).each do |ejober| %>
-        <%= link_to ejober do  %>
-          <div class="card-ejober">
-          <img src="<%= cl_image_path ejober.avatar.key, :gravity=>"face", :width=>200, :height=>200,:radius=>"max", :crop=>"thumb", crop: :fill %>" />
-          <div class="card-ejober-infos">
-            <div>
-              <h2><%= ejober.name %></h2>
-              <p><%= ejober.position %></p>
-            </div>
-            <h2 class="card-ejober-rating">***</h2>
-          </div>
-        </div>
+<div class="cards-ejobers">
+  <%# <div class="card-ejober">
+      <img src="https://source.unsplash.com/50x50/?worker"  class="card-company-avatar"/>
+    <img src="https://source.unsplash.com/200x200/?worker" style="border-radius: 12px;"/>
+    <div class="card-ejober-infos">
+      <div>
+        <h2>Fulano ciclano</h2>
+        <p>Carpinteiro</p>
+      </div>
+      <div class="card-ejober-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <i class="far fa-star"></i>
+      </div>
+    </div>
+  </div> %>
+  <% @ejobers.shuffle.first(3).each do |ejober| %>
+    <%= render "shared/best-ejobers", ejober: ejober %>
+  <% end %>
 
-        <% end %>
-     <% end %>
-  </div>
-<br>
+</div>
 
