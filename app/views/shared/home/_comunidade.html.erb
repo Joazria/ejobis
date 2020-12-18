@@ -1,0 +1,27 @@
+
+<div class="ej-comunidade" id="comunidade">
+  <div class="ej-comunidade__heading">
+    <h3 class="header-2">Faça parte da communidade eJobis</h3>
+    <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur neque at repellendus, earum rerum hic tempora nulla a assumenda!</p>
+  </div>
+  <div class="ej-comunidade__container">
+    <%= link_to(new_company_path, class: "ej-comunidade__service") do  %>
+      <img src="https://res.cloudinary.com/numama/image/upload/v1607920526/ejobis/company1_tibpez.png" alt="" class="ej-comunidade__img">
+      <span class="overlay"></span>
+      <span class="overlay backdrop backdrop--top"></span>
+      <h2 class="title">Empresa</h2>
+    <% end %>
+    <%= link_to(new_ejober_path, class: "ej-comunidade__service") do  %>
+      <img src="https://res.cloudinary.com/numama/image/upload/v1607884602/ejobis/ejober5_xsasha.png" alt="" class="ej-comunidade__img">
+      <span class="overlay"></span>
+      <span class="overlay backdrop backdrop--left"></span>
+      <h2 class="title">e-Jober</h2>
+    <% end %>
+     <div class="ej-comunidade__service">
+      <img src="https://res.cloudinary.com/numama/image/upload/v1607920572/ejobis/maison1_alueni.png" alt="" class="ej-comunidade__img">
+      <span class="overlay"></span>
+      <span class="overlay backdrop backdrop--right" disabled></span>
+      <h2 class="title">Particular (em breve)</h2>
+    </div>
+  </div>
+</div>

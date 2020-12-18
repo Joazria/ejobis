@@ -1,10 +1,14 @@
 // Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
+@import "helpers/variables";
+@import "helpers/reset";
+@import "helpers/utilities";
+@import "mixins/fonts";
+@import "mixins/gallery-sizes";
+@import "helpers/fonts";
+
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
+@import '../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
 @import "font-awesome-sprockets";
 @import "font-awesome";
 

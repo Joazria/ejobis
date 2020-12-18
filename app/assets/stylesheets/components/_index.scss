@@ -1,15 +1,14 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
-@import "banner";
+@import "header";
 @import "button";
-@import "cards";
-@import "card-home";
-@import "card-ejober";
-@import "card-ejobis";
 @import "footer";
 @import "icon";
 @import "navbar";
 @import "inputs";
-
-
+@import "links";
+@import "./home/vantagens";
+@import "./home/comunidade";
+@import "./home/jobs";
+@import "./home/job-card";

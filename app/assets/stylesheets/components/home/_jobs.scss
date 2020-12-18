@@ -1,0 +1,51 @@
+.ej-jobs {
+  min-height: 70vh;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: $color-black;
+  padding-block: 30px;
+  &__heading {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px 0;
+    margin-bottom: 30px;
+    & > .header-2 {
+      max-width: 40ch;
+    }
+    & > .text {
+      max-width: 40ch;
+      color: $color-grey;
+    }
+  }
+  &__container {
+    margin-top: 30px;
+    width: 95%;
+    min-height: 70vh;
+    display: grid;
+    gap: 20px;
+    @include gallery-1;
+    @media screen and (max-width: 1155px) {
+      @include gallery-2;
+    }
+    
+    @media screen and (max-width: 755px) {
+      @include gallery-3;
+    }
+
+    @media screen and (max-width: 420px) {
+      @include gallery-4;
+    }
+  }
+}
+
+.job {
+  background-color: $color-success;
+  border-radius: $radius-lg;
+  width: 100%;
+  height: 100%;
+}

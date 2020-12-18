@@ -27,8 +27,28 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
-document.addEventListener('turbolinks:load', () => {
+  // Look for .hamburger
+  
+  
+  document.addEventListener('turbolinks:load', () => {
+    let open = false;
+    const hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("is-active");
+      if( open ) {
+        hamburger.previousElementSibling.classList.toggle("ej-navbar-drawer--active");
+        const time = setTimeout(() => {
+          hamburger.previousElementSibling.classList.toggle("ej-navbar-drawer--visible");
+        }, 200);
+        open = false;
+      } else {
+        hamburger.previousElementSibling.classList.toggle("ej-navbar-drawer--visible");
+        const time = setTimeout(() => {
+          hamburger.previousElementSibling.classList.toggle("ej-navbar-drawer--active");
+        }, 200);
+        open = true;
+      }
+    });
   // Call your functions here, e.g:
   // initSelect2();
 });

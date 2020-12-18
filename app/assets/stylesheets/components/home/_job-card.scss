@@ -1,0 +1,49 @@
+.job {
+  background-image: var(--bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  padding: 8px 12px;
+  color: $color-white;
+  .overlay {
+    background-color: $color-black;
+    opacity: .6;
+  }
+  &__info {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    height: 100%;
+    gap: 4px 0;
+  }
+  &__name {
+    color: $color-white;
+    text-align: left;
+    word-break: break-word;
+  }
+  &__locale {
+    color: $color-grey-light;
+    font-weight: bold;
+    text-align-last: left;
+  }
+  &__desc {
+    color: $color-white;
+    text-align: left;
+    max-width: 30ch;
+    margin-top: 8px;
+
+  }
+  &__salary {
+    color: $color-brand;
+    text-align: right;
+    align-self: flex-end;
+    position: absolute;
+    padding: 0 0.5rem;
+    background-color: $color-white;
+    bottom: 0;
+    border-radius: $radius-sm;
+  }
+}

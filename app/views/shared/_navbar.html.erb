@@ -1,36 +1,60 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-ejobis">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1607874094/ejobis/ejobis_logo_ld_be6p6k.png" %>
+<nav class="ej-navbar">
+  <% # <img src="" alt="" class="ej-navbar__logo"> %>
+  <h2 class="title">eJobis</h2>
+  <ul class="ej-navbar__options">
+    <li class="ej-navbar__items">
+      <a href="#" class="ej-navbar__links text">Home</a>
+    </li>
+    <li class="ej-navbar__items">
+      <a href="#vantagens" class="ej-navbar__links text">Vantagens</a>
+    </li>
+    <li class="ej-navbar__items">
+      <a href="#comunidade" class="ej-navbar__links text">Comunidade</a>
+    </li>
+    <li class="ej-navbar__items">
+      <a href="#jobs" class="ej-navbar__links text">Jobs</a>
+    </li>
+  </ul>
+  <div class="ej-navbar__auth">
+    <% if user_signed_in? %>
+      <%= link_to "Dashboard", "/profile", class: "link link--basic" %>
+      <%= link_to "<button>Logout</button>".html_safe, destroy_user_session_path, method: :delete, class: "link link--cad" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "ej-navbar__links text" %>
+      <%= link_to "<button>Cadastrar-se</button>".html_safe, new_user_registration_path, class: "link link--cad" %>
     <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-     <% if user_signed_in? %>
-          <li class="nav-item active">
-          <li class="nav-item dropdown">
-            <% if current_user.avatar.attached? %>
-              <%= image_tag current_user.avatar , :width => 50, :height => 50, :gravity => "faces",  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <% else %>
-              <%= image_tag "http://res.cloudinary.com/numama/image/upload/v1606146250/Birds%20Booking/GO_eir181.jpg" , :width => 50, :height => 50, :gravity => "faces",  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% end %>
-
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Dashboard", "/profile", class: "dropdown-item" %>
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-    </ul>
   </div>
-</div>
+</nav>
+<nav class="ej-navbar-mob">
+  
+  <ul class="ej-navbar-drawer">
+   <li class="ej-navbar-drawer__items">
+      <a href="#" class="ej-navbar-drawer__link text link--basic">Home</a>
+    </li>
+    <li class="ej-navbar-drawer__items">
+      <a href="#vantagens" class="ej-navbar-drawer__link text link--basic">Vantagens</a>
+    </li>
+    <li class="ej-navbar-drawer__items">
+      <a href="#comunidade" class="ej-navbar-drawer__link text link--basic">Comunidade</a>
+    </li>
+    <li class="ej-navbar-drawer__items">
+      <a href="#jobs" class="ej-navbar-drawer__link text link--basic">Jobs</a>
+    </li>
+    <span class="separator"></span>
+    <div class="ej-navbar-drawer__auth">
+      <% if user_signed_in? %>
+        <%= link_to "Dashboard", "/profile", class: "title link--basic" %>
+        <%= link_to "Logout".html_safe, destroy_user_session_path, method: :delete, class: "title link--basic" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "title link--basic" %>
+        <%= link_to "Cadastrar-se".html_safe, new_user_registration_path, class: "title link--basic" %>
+      <% end %>
+    </div>
+  </ul>
+  <button class="hamburger hamburger--vortex" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+  <h2 class="header-2">eJobis</h2>
+</nav>

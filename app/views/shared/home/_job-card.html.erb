@@ -1,0 +1,15 @@
+<% if job_entry[:title] %>
+  <div class="job" style="--bg: url(<%= job_entry[:url] %>);">
+    <div class="job__info">
+      <h2 class="job__name title"><%= job_entry[:title] %></h2>
+      <h3 class="job__locale text"><%= job_entry[:locale] %></h3>
+      <p class="job__desc text"><%= job_entry[:description] %><strong><%= job_entry[:date] %></strong></p>
+      <p class="job__salary title"><%= job_entry[:salary] %></p>
+    </div>
+    <span class="overlay"></span>
+  </div>
+<% else %>
+  <div class="job">
+    <h2 class="title">Vai ter uma vaga aqui em breve!</h2>
+  </div>
+<% end %>

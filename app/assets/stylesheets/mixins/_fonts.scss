@@ -1,0 +1,15 @@
+@mixin font-default($font-name) {
+  $font: map-get($font-map, $font-name);
+  @if $font == null {
+    @error "Fonte #{$font-name} não disponível";
+  }
+  $family: nth($font, 1);
+  $size: nth($font, 2);
+  $weight: nth($font, 3);
+  
+  font: {
+    family: $family;
+    size: $size;
+    weight: $weight;
+  }
+}

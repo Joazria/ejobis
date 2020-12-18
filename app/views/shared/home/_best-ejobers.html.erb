@@ -1,0 +1,9 @@
+<div class="ej-ejobers">
+  <div class="ej-ejobers__heading">
+    <h3 class="header-2">eJobers do mês</h3>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque magnam odit porro.</p>
+  </div>
+  <% @ejobers.shuffle.first(3).each do |ejober| %>
+    <%= render "shared/best-ejobers-card", ejober: ejober %>
+  <% end %>
+</div>
