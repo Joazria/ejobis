@@ -1,8 +1,9 @@
 
 <div class="container">
-  <h1>REGISTRAÇÃO DE SEU PERFIL DE E-JOBER</h1>
+  <hr class="separator"/>
+    <h1>Publicar vaga eJobis</h1>
 
-  <%= simple_form_for [ @company, @ejobi ] do |f| %>
+    <%= simple_form_for [ @company, @ejobi ] do |f| %>
      <div class="row">
      <div class="col-6">
        <%= f.input :name,
@@ -80,20 +81,13 @@
                     collection: ["125", "150", "175", "200", "250"],
                     placeholder: 'qual é o fee por dia trabalhado (8horas)'  %>
       </div>
-      <div class="col-4">
-        <%= f.input :acceptance,
-                    label: 'acepto fazer o ejobi  ',
-                    collection: ["sim", "não"],
-                    placeholder: 'sim, caso tem interess '  %>
-      </div>
-        <div class="col-4">
-        <%= f.input :validation,
-                    label: 'o cliente valido o ejobi ',
-                    collection: ["não"],
-                    placeholder: 'to be fullfil by company'  %>
-      </div>
 
-
-    <p><%= f.submit "Send my eJobi ", class: "btn btn-primary" %></p>
+        </div>
+        <div class="row">
+          <div class="col-6">
+          <%= f.submit "Publicar sua vaga", class: "btn btn-primary" %>
+          </div>
+      </div>
   <% end %>
-  </div>
+</div>
+

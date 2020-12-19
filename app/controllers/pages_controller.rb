@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
 
   def home
+    @ejobis = Ejobi.all
     @company = current_user.company
     if params[:query].present?
       @ejobers = Ejober.search_by_position(params[:query])
@@ -12,6 +13,8 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @ejobis = Ejobi.all
+    @company = current_user.company
     if params[:query].present?
       @ejobers = Ejober.search_by_position(params[:query])
     else

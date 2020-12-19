@@ -1,2 +1,57 @@
-<h1>Pages#profile</h1>
-<p>Find me in app/views/pages/profile.html.erb</p>
+<hr class="separator"/>
+
+
+  <div class="link-ejober-dash">
+
+      <%= link_to "Edit perfil", root_path, class: "btn btn-flat" %>
+      <%= link_to "Favoritar", root_path, class: "btn btn-flat" %>
+      <%= link_to "Avaliar & deixar comments", root_path, class: "btn btn-flat" %>
+      <%= link_to "e-jobing", root_path, class: "btn btn-flat" %>
+
+
+  </div>
+<hr class="separator"/>
+
+<div class="tema text-center">
+
+  <h1> Suas  <strong>vagas</strong> eJobis</h1>
+</div>
+
+<div class="cards">
+      <% @ejobis.each do |ejobi| %>
+    <div class="card-ejobis">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-ejobis-infos">
+        <h2> <%= ejobi.name %> </h2>
+        <p class="salary"> <%= ejobi.city %> </p>
+
+        <p><%= ejobi.release %> <strong> </p>
+         <p> do dia <%=  ejobi.start_date.strftime("%d/%m") %> ao dia <%=  ejobi.end_date.strftime("%d/%m") %> </strong></p>
+        <p class="salary"> diaria : R$<%= ejobi.fee %>,00 </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<hr class="separator"/>
+
+
+<div class="tema text-center">
+
+  <h1>Seus <strong>favoritos</strong> eJobers</h1>
+</div>
+
+
+<%= render 'shared/search' %>
+
+
+<div class="cards-ejobers">
+     <% @ejobers.each do |ejober| %>
+         <% if current_user.favorited?(ejober) %>
+          <%= render "shared/best-ejobers", ejober: ejober, company: @company %>
+
+       <% end %>
+     <% end %>
+ </div>
+
+<hr class="separator"/>

@@ -2,6 +2,7 @@ class EjobersController < ApplicationController
       before_action :set_ejober, only: [:show, :edit, :update, :destroy, :add_favorite, :unfavorite]
 
       def index
+        @company = Company.all
     if params[:query].present?
       sql_query = "position ILIKE :query OR skills ILIKE :query"
       @ejobers = Ejober.where(sql_query, query: "%#{params[:query]}%")

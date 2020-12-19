@@ -71,14 +71,16 @@
 </div>
 
 <div class="cards">
+  <% @ejobis.each do |ejobi| %>
     <div class="card-ejobis">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
       <div class="card-ejobis-infos">
-        <h2>Assistente de vendas </h2>
+        <h2> <%= ejobi.name %> </h2>
         <p>Vaga como assistente de vendas <strong>do dia 14 ao dia 18 de dezembro</strong></p>
-        <p class="salary">R$1.500,00</p>
+        <p class="salary"> <%= ejobi.fee %> </p>
       </div>
     </div>
+    <% end  %>
   <div class="card-ejobis">
       <img src="https://res.cloudinary.com/numama/image/upload/v1607884635/ejobis/ejober7_mcbt2m.png" />
       <div class="card-ejobis-infos">
