@@ -1,9 +1,10 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :companies
+  has_one :company
   has_many :ejobers
   validates_uniqueness_of :username
+  acts_as_favoritor
 
   has_one_attached :avatar
   # Include default devise modules. Others available are:

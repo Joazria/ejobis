@@ -1,5 +1,5 @@
 class EjobersController < ApplicationController
-      before_action :set_ejober, only: [:show, :edit, :update, :destroy]
+      before_action :set_ejober, only: [:show, :edit, :update, :destroy, :add_favorite, :unfavorite]
 
       def index
     if params[:query].present?
@@ -42,6 +42,33 @@ class EjobersController < ApplicationController
   def destroy
     @ejober.destroy
     redirect_to root_path, notice: "Seu perfil foi destruido."
+  end
+
+  #   def add_favorite
+  #   current_user.company.favorite(@ejober)
+  #   redirect_to request.referrer
+  # end
+
+  # def unfavorite
+  #   current_user.company.unfavorite(@ejober)
+  #   redirect_to request.referrer
+  # end
+def favoritar
+    @ejober = Ejober.find(params[:id])
+    current_user.favorited?(@ejober) ? current_user.unfavorite(@ejober) : current_user.favorite(@ejober)
+  end
+
+ def favorite
+    @ejober = Ejober.find(params[:id])
+    @favorite = Favorite.create(company: current_user.company, ejober: @ejober)
+    redirect_to ejober_path(@ejober)
+  end
+
+  def unfavorite
+    @ejober = Ejober.find(params[:id])
+    @favorite = Favorite.find_by(company: current_user.company, ejober: @ejober)
+    @favorite.destroy
+    redirect_to ejober_path(@ejober)
   end
 
   private

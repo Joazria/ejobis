@@ -1,5 +1,20 @@
- <%= link_to ejober, class: "card-ejober" do %>
-    <i class="far fa-heart card-company-avatar"></i>
+    <div class="card-ejober">
+<!--     <% if current_user.favorited?(ejober) %>
+        <%= link_to add_favorite_ejober_path(ejober), method: :post, remote: true do %>
+          <i class="fas fa-heart favorite card-ejober card-company-avatar "></i>
+         <% end %>
+    <% else %>
+      <%= link_to unfavorite_ejober_path(ejober),
+        method:"post", remote: true do %>
+          <i class="far fa-heart favorite card-company-avatar red"></i>
+      <% end %>
+    <% end %> -->
+    <%= link_to favoritar_ejober_path(ejober), remote: true, method: :post do %>
+        <%= render 'ejobers/favoritar_button', ejober: ejober %>
+        <!-- <i class="fas fa-heart favorite card-ejober card-company-avatar " data-id="<%= ejober.id %>"></i> -->
+<% end %>
+
+   <%= link_to ejober do %>
     <img src="<%= cl_image_path ejober.avatar.key, :gravity=>"face", :width=>200, :height=>200,:radius=>"max", :crop=>"thumb", crop: :fill %>" />
     <div class="card-ejober-infos">
       <div>
@@ -14,4 +29,5 @@
         <i class="far fa-star"></i>
       </div>
     </div>
-<% end %>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<%# if user_signed_in? %>
+<!--   <div class="favorite card-company-avatar <%= 'red' if current_user.favorited?(ejober) %>" data-id="<%= ejober.id %>">
+    <i class="far fa-heart" style="font-size: 20px;"></i>
+  </div> -->
+<%# end %>
+
+<% if current_user.favorited?(ejober) %>
+          <i class="fas fa-heart favorite card-ejober card-company-avatar " style='color: red' data-id="<%= ejober.id %>" data-remote="true"></i>
+    <% else %>
+          <i class="far fa-heart favorite card-ejober card-company-avatar" data-id="<%= ejober.id %>" data-remote="true"></i>
+    <% end %>

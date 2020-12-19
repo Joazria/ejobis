@@ -59,7 +59,7 @@
     </div>
   </div> %>
   <% @ejobers.shuffle.first(4).each do |ejober| %>
-    <%= render "shared/best-ejobers", ejober: ejober %>
+    <%= render "shared/best-ejobers", ejober: ejober, company: @company %>
   <% end %>
 
 </div>

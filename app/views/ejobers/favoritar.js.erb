@@ -1,0 +1,7 @@
+var ejoberId = '<%= @ejober.id%>'
+function toggleFavoritarButton(ejoberId, innerHTML) {
+  let favoritarButton = document.querySelector(`.fa-heart[data-id='${ejoberId}']`)
+console.log('maldito aZax')
+  favoritarButton.classList.toggle('red');
+}
+toggleFavoritarButton(ejoberId, '<%= j render "ejobers/favoritar_button", ejober: @ejober %>');

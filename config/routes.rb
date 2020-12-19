@@ -11,7 +11,13 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   end
-  resources :ejobis, only: [:destroy, :update, :edit]
-  resources :ejobers
 
+  resources :ejobis, only: [:destroy, :update, :edit]
+  resources :ejobers do
+    member do
+     post :add_favorite
+    post :unfavorite
+    post 'favoritar', to: 'ejobers#favoritar'
+    end
+  end
 end
