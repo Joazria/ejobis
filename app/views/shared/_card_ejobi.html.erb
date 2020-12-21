@@ -1,0 +1,9 @@
+<div class="card-ejobis">
+    <img src="<%= cl_image_path ejobi.photo.key, :width=>200, :height=>200, :crop=>"thumb", crop: :fill %>" />
+      <div class="card-ejobis-infos">
+        <h2> <%= ejobi.name %> </h2>
+        <p> <%= ejobi.release %> </p>
+        <p><%= ejobi.start_date.strftime('%d/%m') %> - <%= ejobi.end_date.strftime('%d/%m/%Y') %></p>
+        <p class="salary"> Diaria: <strong>R$<%= ejobi.fee %>,00</strong> </p>
+      </div>
+    </div>

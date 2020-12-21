@@ -35,28 +35,30 @@
      </div>
    </div>
    <div class="row">
-     <div class="col-3">
+     <div class="col-4">
        <%= f.input :start_time,
                     label: 'Que horas inicia ?',
                     as: :time %>
      </div>
-     <div class="col-3">
+     <div class="col-4">
        <%= f.input :end_time,
                     label: 'Que horas acaba ?',
                     as: :time %>
      </div>
-      <div class="col-3">
+    </div>
+    <div class="row">
+      <div class="col-6">
        <%= f.input :start_date,
                     label: 'Que dia inicia  ?',
                     as: :date %>
      </div>
 
-      <div class="col-3">
+      <div class="col-6">
        <%= f.input :end_date,
                     label: 'Que dia acaba  ?',
                     as: :date %>
      </div>
-   </div>
+    </div>
    <div class="row">
     <div class="col-4">
         <%= f.input :state,
@@ -80,6 +82,11 @@
         <%= f.input :fee,
                     collection: ["125", "150", "175", "200", "250"],
                     placeholder: 'qual é o fee por dia trabalhado (8horas)'  %>
+      </div>
+      <div class="col-4">
+       <%= f.input :avatar,
+                  label: 'upload uma imagem',
+                  as: :file %>
       </div>
 
         </div>

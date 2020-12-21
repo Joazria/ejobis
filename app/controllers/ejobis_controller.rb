@@ -65,7 +65,8 @@ class EjobisController < ApplicationController
             :fee,
             :address,
             :city,
-            :state
+            :state,
+            :photo
       )
    end
 end

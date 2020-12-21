@@ -76,8 +76,9 @@
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
       <div class="card-ejobis-infos">
         <h2> <%= ejobi.name %> </h2>
-        <p>Vaga como assistente de vendas <strong>do dia 14 ao dia 18 de dezembro</strong></p>
-        <p class="salary"> <%= ejobi.fee %> </p>
+        <p> <%= ejobi.release %> </p>
+        <p><%= ejobi.start_date.strftime('%d/%m') %> - <%= ejobi.end_date.strftime('%d/%m/%Y') %></p>
+        <p class="salary"> Diaria: <strong>R$<%= ejobi.fee %>,00</strong> </p>
       </div>
     </div>
     <% end  %>

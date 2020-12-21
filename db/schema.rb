@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_184110) do
+ActiveRecord::Schema.define(version: 2020_12_19_232907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,18 @@ ActiveRecord::Schema.define(version: 2020_12_18_184110) do
     t.index ["user_id"], name: "index_ejobers_on_user_id"
   end
 
+  create_table "ejobi_validations", force: :cascade do |t|
+    t.bigint "ejobi_id", null: false
+    t.bigint "ejober_id", null: false
+    t.string "apply"
+    t.string "approve"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "TermsOfServices"
+    t.index ["ejober_id"], name: "index_ejobi_validations_on_ejober_id"
+    t.index ["ejobi_id"], name: "index_ejobi_validations_on_ejobi_id"
+  end
+
   create_table "ejobis", force: :cascade do |t|
     t.bigint "company_id", null: false
     t.string "position"
@@ -126,5 +138,7 @@ ActiveRecord::Schema.define(version: 2020_12_18_184110) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "companies", "users"
   add_foreign_key "ejobers", "users"
+  add_foreign_key "ejobi_validations", "ejobers"
+  add_foreign_key "ejobi_validations", "ejobis"
   add_foreign_key "ejobis", "companies"
 end

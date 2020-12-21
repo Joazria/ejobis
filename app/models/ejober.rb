@@ -1,6 +1,7 @@
 class Ejober < ApplicationRecord
   belongs_to :user
   has_many :ejobis
+
   acts_as_favoritable
 
 

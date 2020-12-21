@@ -1,6 +1,8 @@
 class Ejobi < ApplicationRecord
   belongs_to :company
 
+  has_one_attached :photo
+
   validates :name,
             :position,
             :release,

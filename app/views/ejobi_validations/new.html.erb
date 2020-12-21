@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>APPLY </h1>
+
+  <%= simple_form_for @ejober do |f| %>
+    <div class="row">
+        <div class="col-6">
+          <%= f.input :apply,
+                      collection: ["Sim", "Não"]
+                      label: 'Vc quer applicar nessa vaga:' %>
+        </div>
+        <div class="col-6">
+          <%= f.input :approve,
+                      label: 'Seu nome:',
+                      placeholder: 'Goulart' %>
+        </div>
+    </div>
+    <div class="row">
+      <p><%= f.submit "Criar seu perfil", class: "btn btn-success" %></p>
+    </div>
+
+  <% end %>
+</div>
